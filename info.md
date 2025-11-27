@@ -186,7 +186,93 @@ Recursion depth = rules triggered → **O(R)**
 | 3 | Family Tree | O(n) | O(n) |
 | 4 | A* | O(E log V) | O(V) |
 | 5 | Minimax TTT | O(9!) | O(d) |
+
+
+
+A1_StepsinOP
+
+Here are the **short**, clean answers for your **updated 8-Puzzle BFS/DFS code**.
+
+---
+
+# ✅ **Algorithm Steps (Short & Clear)**
+
+### **BFS**
+
+1. Push initial state into a queue.
+2. While queue not empty:
+
+   * Pop front state.
+   * If it matches goal → stop & print full path.
+   * Find blank (0) and generate 4 possible moves.
+   * For each valid new state: if not visited → push to queue.
+3. If queue empties → goal unreachable.
+
+### **DFS**
+
+1. Push initial state into a stack.
+2. While stack not empty:
+
+   * Pop top state.
+   * If goal → stop & print full path.
+   * Generate 4 moves from blank position.
+   * For each valid unvisited state → push to stack.
+3. If stack empties → goal unreachable.
+
+---
+
+# ✅ **Time Complexity**
+
+### **BFS:**
+
+[
+O(b^d)
+]
+
+* b = branching factor (≤ 4)
+* d = depth of solution
+  Worst case: huge, because BFS explores every level.
+
+### **DFS:**
+
+[
+O(b \cdot d)
+]
+Depth-limited search. Much less memory, but may go deep unnecessarily.
+
+---
+
+# ✅ **Space Complexity**
+
+### **BFS:**
+
+[
+O(b^d)
+]
+Stores *entire* frontier (very memory heavy).
+
+### **DFS:**
+
+[
+O(b \cdot d)
+]
+Only stores the current path + some visited states.
+
+---
+
+# **Final Summary (Very Short)**
+
+| Method  | Time Complexity | Space Complexity | Notes                                        |
+| ------- | --------------- | ---------------- | -------------------------------------------- |
+| **BFS** | O(b^d)          | O(b^d)           | Guaranteed shortest path but memory heavy    |
+| **DFS** | O(b·d)          | O(b·d)           | Less memory but may explore deep wrong paths |
+
+---
+
+If you want an **A*** version with heuristics (Manhattan distance) to solve faster, I can generate that too.
+
 | 6 | N-Queens | O(N!) | O(N²) |
 | 7 | Forward Chaining | O(R) | O(R+F) |
 | 8 | Backward Chaining | O(R×F) | O(R) |
+
 
